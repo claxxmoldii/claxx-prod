@@ -1,0 +1,475 @@
+/*
+thanks annette...
+claxx moldii
+12.2017
+*/
+
+/* setters byclaxx moldii
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Raleway', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+list-style: none;
+}
+
+blockquote {
+  margin: 0;
+}
+
+/* scaffold
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.grid {
+  display: grid;
+}
+
+section {
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+section .contents {
+  min-height: 100vh;
+}
+
+section .content h3 {
+  color: #ccc;
+}
+
+
+
+/* style
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* landing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.landing h3 {
+  color: skyblue;
+}
+
+.landing li {
+  color: #ccc;
+}
+
+/* commons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.landing .contents,
+.buildLog .contents,
+.attributions .contents {
+  grid-template: 1fr 2fr / 1fr 1fr;
+  grid-template-areas:  "header ."
+                        ". list";
+}
+
+.landing h3,
+.stuff h3,
+.buildLog h3,
+.attributions h3 {
+  grid-area: header;
+  justify-self: end;
+  align-self: end;
+  margin: 0;
+}
+
+.landing ul,
+.buildLog ul,
+.attributions ul {
+  grid-area: list;
+}
+
+/* landing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.landing h3 {
+  color: skyblue;
+}
+
+.landing ul {
+  color: #333;
+}
+
+/* stuff
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.stuff .contents {
+  grid-template-rows: repeat (4, 1fr);
+}
+
+.stuff .learnThese,
+.stuff .frameworks,
+.stuff .spa,
+.stuff .tools {
+  grid-template: 1fr 2fr / 1fr 1fr;
+  grid-template-areas:  "header ."
+                        ". list";
+}
+
+.stuff .learnThese h3,
+.stuff .frameworks h3,
+.stuff .spa h3,
+.stuff .tools h3 {
+  grid-area: header;
+  justify-self: end;
+  align-self: end;
+  margin: 0;
+}
+
+.stuff .learnThese ul,
+.stuff .frameworks ul,
+.stuff .spa ul,
+.stuff .tools ul {
+  grid-area: list;
+}
+
+.stuff a {
+  text-decoration: none;
+  color: black;
+}
+
+.stuff a:hover  .appear-o {
+  display: inline-block;
+  color: skyblue;
+}
+
+.appear-o {
+  display: none;
+}
+
+/* map
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.map .contents {
+  grid-template-columns: 2fr 3fr;
+  grid-template-areas: "map blastradius"
+}
+
+#map {
+  grid-area: map;
+
+  height: 100%;
+  width: 100%;
+}
+
+.map .blastRadius {
+  grid-area: blastradius;
+  grid-template: 1fr 2fr / 1fr 1fr;
+  grid-template-areas:  "header ."
+                        ". list";
+}
+
+.map .blastRadius h3 {
+  grid-area: header;
+  justify-self: end;
+  align-self: end;
+  margin: 0;
+}
+
+.map .blastRadius ul {
+  grid-area: list;
+}
+
+.map .co {
+  color: #333;
+}
+
+.map .co:hover {
+  color: crimson;
+  cursor: pointer;
+}
+
+/* tallFooter
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.tallFooter .contents {
+  font-weight: 300;
+  letter-spacing: .3px;
+}
+
+.tallFooter h4 {
+  color: #f6f6f6;
+}
+
+.tallFooter a {
+  color: #f6f6f6;
+  text-decoration: none;
+}
+
+.tallFooter .contents {
+  color: #f6f6f6;
+}
+
+.tallFooter .grid {
+  grid-template: 100px 130px 100px 1fr 40px / 800px;
+  grid-template-areas:  "footerHeader"
+                        "emailInput"
+                        "email"
+                        "services"
+                        "footer";
+  justify-content: center;
+}
+
+.footerHeader {
+  grid-area: footerHeader;
+  align-self: end;
+}
+
+.footerHeader * {
+  display: inline-block;
+  margin: 0;
+  color: white;
+}
+
+.footerHeader h4 {
+  padding-right: 30px;
+}
+
+.footerHeader a {
+  padding-right: 20px;
+}
+
+.footerHeader a:hover {
+  color: goldenrod;
+  text-decoration: underline;
+}
+
+.footerHeader .ad {
+  background: url(../images/mt-logo.png) no-repeat center center scroll;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: calc(50px * 1.5);
+  height: calc(20px * 1.5);
+  float: right;
+}
+
+.emailInput {
+  grid-area: emailInput;
+  align-self: end;
+  border-bottom: 1px solid lightgrey;
+}
+
+.emailInput input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  background-color: rgb(0,0,0,0.0);
+
+  font-size: 3em;
+}
+
+.emailInput input:focus {
+  outline: none;
+  border: 0;
+}
+
+.email {
+  grid-area: email;
+}
+
+.tallFooter .contents .services {
+  grid-area: services;
+  grid-template: 1fr / repeat(4, 120px) 1fr;
+}
+
+.servicesHeading {
+  color: grey;
+}
+
+.services .profile {
+  justify-self: end;
+}
+
+.services .profile * {
+  margin: 0;
+}
+
+.services .profile .cto {
+  background: url(../images/hermione.jpg) no-repeat 10% 5% scroll;
+  -webkit-background-size: 150%;
+  background-size: 150%;
+  width: 150px;
+  height: 100px;
+}
+
+.services a {
+  display: block;
+  color: white;
+}
+
+.services a:hover {
+  color: skyblue;
+  text-decoration: underline;
+}
+.tallFooter footer {
+  grid-area: footer;
+}
+
+.tallFooter footer p {
+  display: inline-block;
+}
+
+.tallFooter footer .copyright {
+  padding-right: 40px;
+}
+
+.tallFooter footer i {
+  padding-left: 20px;
+}
+
+.tallFooter footer i:hover {
+  cursor: pointer;
+  color: skyblue;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* bgfx
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.bgfx {
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  overflow: hidden; /* clears white space above div! yey! */
+}
+
+.landing .bgfx {
+  background: url(../images/bg/lemans-05.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.stuff .bgfx {
+  background: url(../images/bg/lemans-02.jpg) no-repeat center 35% fixed;
+  background-size: cover;
+}
+
+.map .bgfx {
+  background: url(../images/bg/lemans-03.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.buildLog .bgfx {
+  background: url(../images/bg/lemans-04.jpg) no-repeat center 35% fixed;
+  background-size: cover;
+}
+
+.attributions .bgfx {
+  background: url(../images/bg/volvo-01.jpg) no-repeat center 35% fixed;
+  background-size: cover;
+}
+
+.tallFooter .bgfx {
+  background: url(../images/bg/crane-02.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+section .content {
+  min-height: 100vh;
+}
+
+.section-01 .shade {
+  background-color: rgba(70,130,180,.75);
+}
+
+.section-02 .shade,
+.stuff .shade {
+  background-color: rgba(220,20,60,0.75);
+}
+
+.section-03 .shade {
+  background-color: rgba(60,179,113,0.75);
+}
+
+.section-04 .shade {
+  background-color: rgba(218,165,32,0.75);
+}
+
+.section-05 .shade,
+.landing .shade {
+  background-color: rgba(0,0,0,0.75);
+}
+
+.tallFooter .shade {
+  background-color: rgba(0,0,0,0.85);
+}
+
+
+
+/* helpers
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dateIsDodgerBlue {
+/*  color: skyblue;*/
+    color: dodgerblue;
+}
+
+.textIsYellowGreen,
+.dateIsYellowGreen {
+/*  color: skyblue;*/
+    color: yellowgreen;
+}
+
+.textIsCrimson {
+/*  color: skyblue;*/
+    color: crimson;
+}
+
+.skyblue {
+  background-color: beige;
+}
+
+.beige {
+  background-color: beige;
+}
+
+.lightgreen {
+  background-color: lightgreen;
+}
+
+.crimson {
+  background-color: crimson;
+}
+
+.bordered {
+  border: 1px grey solid;
+}
+
+.aqua {
+  background-color: aqua;
+}
+
+.lightcyan {
+  background-color: lightcyan;
+}
+
+.mintcream {
+  background-color: mintcream;
+}
+
+.bgfff {
+  background-color: #fff;
+}
